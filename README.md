@@ -4,3 +4,7 @@
 
 <h1 align="center">Meet Mute</h1>
 <h3 align="center">A Google Chrome extension that makes it easy to mute/unmute Google Meet tabs.</h3>
+
+## Installation
+
+[<img src="install.png" width="175px">][https://chrome.google.com/webstore/detail/meet-mute/dkgoclojlihiolngeagmhkjiglmoeeic]
