@@ -32,6 +32,9 @@ function waitForMuteButton() {
       updateMuted()
       watchIsMuted(el)
     })
+    .catch((error) => {
+      chrome.extension.sendMessage({ message: 'disconnected' })
+    })
 }
 
 var muted = false
