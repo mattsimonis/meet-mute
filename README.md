@@ -7,4 +7,6 @@
 
 ## Installation
 
-[<img src="install.png" width="175px">][https://chrome.google.com/webstore/detail/meet-mute/dkgoclojlihiolngeagmhkjiglmoeeic]
+[<img src="install.png" width="175px">][webstore-url]
+
+[webstore-url]: https://chrome.google.com/webstore/detail/meet-mute/dkgoclojlihiolngeagmhkjiglmoeeic
