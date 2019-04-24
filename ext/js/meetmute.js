@@ -1,3 +1,5 @@
+const MUTE_BUTTON = 'div[role="button"][aria-label*="microphone"][data-is-muted]'
+
 const waitUntilElementExists = (DOMSelector, MAX_TIME = 5000) => {
   let timeout = 0
 
@@ -26,7 +28,7 @@ function waitForMuteButton() {
     return
   }
   waitingForMuteButton = true
-  waitUntilElementExists('div[data-capture-type="mic"] > div[role="button"]')
+  waitUntilElementExists(MUTE_BUTTON)
     .then((el) => {
       waitingForMuteButton = false
       updateMuted()
@@ -40,7 +42,7 @@ function waitForMuteButton() {
 var muted = false
 
 function isMuted() {
-  let dataIsMuted = document.querySelector('div[data-capture-type="mic"] > div[role="button"]')
+  let dataIsMuted = document.querySelector(MUTE_BUTTON)
       .getAttribute('data-is-muted')
   return dataIsMuted == 'true'
 }
