@@ -51,8 +51,9 @@ function setIcon(status) {
   let title = status.charAt(0).toUpperCase() + status.substr(1)
   chrome.browserAction.setIcon({
     path: {
-      "16": `icons/icon16${ iconType }.png`,
-      "48": `icons/icon48${ iconType }.png`
+      "32": `icons/icon32${ iconType }.png`,
+      "48": `icons/icon48${ iconType }.png`,
+      "128": `icons/icon128${ iconType }.png`
     }
   })
   chrome.browserAction.setTitle({
