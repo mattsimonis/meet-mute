@@ -66,7 +66,7 @@ function watchIsMuted(el) {
     }
   })
   isMutedObserver.observe(el, {
-    attributes: true, 
+    attributes: true,
     attributeFilter: ['data-is-muted']
   })
 }
@@ -79,7 +79,7 @@ function watchBodyClass() {
     }
   })
   bodyClassObserver.observe(document.querySelector('body'), {
-    attributes: true, 
+    attributes: true,
     attributeFilter: ['class'],
     attributeOldValue: true
   })
