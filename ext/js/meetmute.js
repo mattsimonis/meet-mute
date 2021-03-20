@@ -1,4 +1,9 @@
 const MUTE_BUTTON = 'div[role="button"][aria-label][data-is-muted]'
+const CAMERA_BUTTON = 'div[role="button"][aria-label*=camera][data-is-muted]'
+
+// types of events
+const MICROPHONE = 'microphone'
+const CAMERA = 'camera'
 
 const waitUntilElementExists = (DOMSelector, MAX_TIME = 5000) => {
   let timeout = 0
@@ -96,23 +101,25 @@ chrome.runtime.onMessage.addListener(
     muted = isMuted()
     if (request && request.command && request.command === 'toggle_mute') {
       muted = !muted
-      sendKeyboardCommand()
+      sendKeyboardCommand(MICROPHONE)
     } else if (request && request.command && request.command === 'mute') {
       if (!muted) {
         muted = !muted
-        sendKeyboardCommand()
+        sendKeyboardCommand(MICROPHONE)
       }
     } else if (request && request.command && request.command === 'unmute') {
       if (muted) {
         muted = !muted
-        sendKeyboardCommand()
+        sendKeyboardCommand(MICROPHONE)
       }
+    } else if (request && request.command && request.command === 'toggle_camera') {
+      sendKeyboardCommand(CAMERA)
     }
 
     sendResponse({ message: muted ? 'muted' : 'unmuted' });
   })
 
-const keydownEvent = new KeyboardEvent('keydown', {
+const microphoneKeydownEvent = new KeyboardEvent('keydown', {
   "key": "d",
   "code": "KeyD",
   "metaKey": true,
@@ -121,6 +128,19 @@ const keydownEvent = new KeyboardEvent('keydown', {
   "which": 100
 })
 
-function sendKeyboardCommand() {
-  document.dispatchEvent(keydownEvent)
+const cameraKeydownEvent = new KeyboardEvent('keydown', {
+  "key": "e",
+  "code": "KeyE",
+  "metaKey": true,
+  "charCode": 100,
+  "keyCode": 100,
+  "which": 100
+})
+
+function sendKeyboardCommand(typeOfCommand) {
+  if (typeOfCommand === MICROPHONE) {
+    document.dispatchEvent(microphoneKeydownEvent)
+  } else if ((typeOfCommand === CAMERA)) {
+    document.dispatchEvent(cameraKeydownEvent)
+  }
 }
