@@ -18,3 +18,7 @@ Mute/unmute sound can be enabled in extension options.
 # License
 
 COPYRIGHT (C) 2020 MATT SIMONIS. LICENSED UNDER THE MIT LICENSE.
+
+# Credits
+
+Sounds from [https://rcptones.com/dev_tones/](https://rcptones.com/dev_tones/).
