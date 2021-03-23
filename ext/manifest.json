@@ -56,5 +56,9 @@
       },
       "global": true
     }
-  }
+  },
+  "web_accessible_resources": [
+    "sounds/on.mp3",
+    "sounds/off.mp3"
+  ]
 }
