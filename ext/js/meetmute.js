@@ -1,10 +1,16 @@
 const MUTE_BUTTON = 'div[role="button"][aria-label][data-is-muted]'
+const BROWSER = chrome || browser; // polyfill
 
 const audio_on = new Audio(chrome.runtime.getURL('../sounds/on.mp3'));
 const audio_off = new Audio(chrome.runtime.getURL('../sounds/off.mp3'));
+let has_audio = false
 
 audio_on.volume = 0.5;
 audio_off.volume = 0.5;
+
+BROWSER.storage.sync.get('sound', ({ sound }) => {
+  has_audio = Boolean(sound);
+});
 
 const waitUntilElementExists = (DOMSelector, MAX_TIME = 5000) => {
   let timeout = 0
@@ -101,10 +107,12 @@ chrome.runtime.onMessage.addListener(
   (request, sender, sendResponse) => {
     muted = isMuted()
 
-    if (muted) {
-      audio_off.play();
-    } else {
-      audio_on.play();
+    if (has_audio) {
+      if (muted) {
+        audio_off.play();
+      } else {
+        audio_on.play();
+      }
     }
 
     if (request && request.command && request.command === 'toggle_mute') {

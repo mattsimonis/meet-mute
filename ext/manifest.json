@@ -32,6 +32,7 @@
     "default_title": "Disconnected"
   },
   "permissions": [
+    "storage",
     "https://meet.google.com/*"
   ],
   "commands": {
@@ -60,5 +61,8 @@
   "web_accessible_resources": [
     "sounds/on.mp3",
     "sounds/off.mp3"
-  ]
+  ],
+  "options_ui": {
+    "page": "options.html"
+  }
 }

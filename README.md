@@ -11,6 +11,10 @@
 
 [webstore-url]: https://chrome.google.com/webstore/detail/meet-mute/dkgoclojlihiolngeagmhkjiglmoeeic
 
+# Options
+
+Mute/unmute sound can be enabled in extension options.
+
 # License
 
 COPYRIGHT (C) 2020 MATT SIMONIS. LICENSED UNDER THE MIT LICENSE.
