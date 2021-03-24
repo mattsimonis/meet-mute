@@ -107,14 +107,6 @@ chrome.runtime.onMessage.addListener(
   (request, sender, sendResponse) => {
     muted = isMuted()
 
-    if (has_audio) {
-      if (muted) {
-        audio_off.play();
-      } else {
-        audio_on.play();
-      }
-    }
-
     if (request && request.command && request.command === 'toggle_mute') {
       muted = !muted
       sendKeyboardCommand()
@@ -127,6 +119,14 @@ chrome.runtime.onMessage.addListener(
       if (muted) {
         muted = !muted
         sendKeyboardCommand()
+      }
+    }
+
+    if (has_audio) {
+      if (muted) {
+        audio_off.play();
+      } else {
+        audio_on.play();
       }
     }
 
