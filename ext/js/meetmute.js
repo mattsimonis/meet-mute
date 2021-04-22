@@ -113,13 +113,14 @@ chrome.runtime.onMessage.addListener(
   })
 
 const keydownEvent = new KeyboardEvent('keydown', {
-  "key": "d",
-  "code": "KeyD",
-  "metaKey": true,
-  "charCode": 100,
-  "keyCode": 100,
-  "which": 100
-})
+  key: "d",
+  keyCode: 68,
+  code: "KeyD",
+  which: 68,
+  shiftKey: false,
+  ctrlKey: true,
+  metaKey: false
+});
 
 function sendKeyboardCommand() {
   document.dispatchEvent(keydownEvent)
