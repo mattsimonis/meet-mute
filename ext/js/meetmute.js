@@ -1,4 +1,4 @@
-const MUTE_BUTTON = 'div[role="button"][aria-label][data-is-muted]'
+const MUTE_BUTTON = '[role="button"][aria-label][data-is-muted]'
 
 const waitUntilElementExists = (DOMSelector, MAX_TIME = 5000) => {
   let timeout = 0
