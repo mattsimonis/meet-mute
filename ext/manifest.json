@@ -2,7 +2,7 @@
   "name": "Meet Mute",
   "short_name": "MeetMute",
   "author": "Matt Simonis",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "manifest_version": 2,
   "description": "Easy muting/unmuting for when you're in a Google Meet.",
   "icons": {
