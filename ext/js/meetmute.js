@@ -124,8 +124,10 @@ chrome.runtime.onMessage.addListener(
 
     if (has_audio) {
       if (muted) {
+        audio_off.currentTime = 0;
         audio_off.play();
       } else {
+        audio_on.currentTime = 0;
         audio_on.play();
       }
     }
