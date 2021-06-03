@@ -1,4 +1,4 @@
-const MUTE_BUTTON = 'div[role="button"][aria-label][data-is-muted]'
+const MUTE_BUTTON = '[role="button"][aria-label][data-is-muted]'
 const BROWSER = chrome || browser; // polyfill
 
 const audio_on = new Audio(chrome.runtime.getURL('../sounds/on.mp3'));
