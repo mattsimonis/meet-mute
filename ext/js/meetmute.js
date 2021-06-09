@@ -96,31 +96,22 @@ chrome.runtime.onMessage.addListener(
     muted = isMuted()
     if (request && request.command && request.command === 'toggle_mute') {
       muted = !muted
-      sendKeyboardCommand()
+      toggleMeetMuted();
     } else if (request && request.command && request.command === 'mute') {
       if (!muted) {
         muted = !muted
-        sendKeyboardCommand()
+        toggleMeetMuted();
       }
     } else if (request && request.command && request.command === 'unmute') {
       if (muted) {
         muted = !muted
-        sendKeyboardCommand()
+        toggleMeetMuted();
       }
     }
 
     sendResponse({ message: muted ? 'muted' : 'unmuted' });
   })
 
-const keydownEvent = new KeyboardEvent('keydown', {
-  "key": "d",
-  "code": "KeyD",
-  "metaKey": true,
-  "charCode": 100,
-  "keyCode": 100,
-  "which": 100
-})
-
-function sendKeyboardCommand() {
-  document.dispatchEvent(keydownEvent)
+function toggleMeetMuted() {
+  document.querySelector(MUTE_BUTTON).click();
 }
