@@ -1,9 +1,10 @@
-const MUTE_BUTTON = 'div[role="button"][aria-label][data-is-muted]'
-const CAMERA_BUTTON = 'div[role="button"][aria-label*=camera][data-is-muted]'
+const MUTE_BUTTON = '[role="button"][aria-label][data-is-muted]'
+const CAMERA_BUTTON = '[role="button"][aria-label*=camera][data-is-muted]'
 
 // types of events
 const MICROPHONE = 'microphone'
 const CAMERA = 'camera'
+
 
 const waitUntilElementExists = (DOMSelector, MAX_TIME = 5000) => {
   let timeout = 0
