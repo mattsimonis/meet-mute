@@ -55,6 +55,13 @@
         "default": "Ctrl+Shift+B"
       },
       "global": true
+    },
+    "toggle_camera": {
+      "description": "Toggle Camera",
+      "suggested_key": {
+        "default": "Ctrl+Shift+V"
+      },
+      "global": true
     }
   }
 }
